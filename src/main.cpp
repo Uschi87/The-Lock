@@ -19,6 +19,10 @@ String lockstate ="Locked";
 
 AsyncWebServer server(80);
 
+//Define Servo
+//Servo Servo_SG90;
+//int pos = 0;
+
 // Create new WiFi AP
 const char* ssid = "THE-LOCK";
 const char* password = "123456";
@@ -84,7 +88,11 @@ void setup() {
   Serial.print("IP Address: ");
   Serial.println(WiFi.softAPIP());
 
-
+//Servo 
+//  Serial.println("Verbinde Servo.");
+//  Servo_SG90.attach(2); // 2 = D4
+//  Serial.println("Servo auf 0 Grad stellen");
+//  Servo_SG90.write(0);
 
  // Send web page with input fields to client
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
